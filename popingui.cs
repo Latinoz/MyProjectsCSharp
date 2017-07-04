@@ -44,14 +44,16 @@ namespace Popingui
             try
             {
                 PingReply reply;
-                reply = pingSender.Send(address);
+                
                 while (true)
                 {
                     System.Threading.Thread.Sleep(1000);
 
+                    reply = pingSender.Send(address);
                     if (reply.Status == IPStatus.Success)
-
+                    
                     {
+                        
                         Console.WriteLine("Address: {0}", reply.Address.ToString());
                         Console.WriteLine("Time to live: {0}", reply.Options.Ttl);
                         Console.WriteLine("Buffer size: {0}", reply.Buffer.Length);
@@ -62,8 +64,10 @@ namespace Popingui
 
                     else
                      {
-                        Console.WriteLine("Host not answer!");
-                     }
+                       Console.WriteLine("Host not answer!");
+                       Console.WriteLine();
+                        // return;
+                    }
                 }
 
             }
