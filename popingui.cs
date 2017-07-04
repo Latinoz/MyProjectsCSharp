@@ -17,7 +17,7 @@ namespace Popingui
 
             public string ip;
 
-            public void PrintEnterIp () {
+            public void PrintEnterIp () {                    // Метод ввода ip адреса
                 Console.WriteLine("Enter ip address: ");
                 }
         }
@@ -29,7 +29,7 @@ namespace Popingui
 
             obj1.PrintEnterIp();
 
-            obj1.ip = Console.ReadLine();
+            obj1.ip = Console.ReadLine();                    // Получение ip адреса из командной строки
 
 
             Ping pingSender = new Ping();
@@ -45,12 +45,13 @@ namespace Popingui
             {
                 PingReply reply;
                 
-                while (true)
-                {
-                    System.Threading.Thread.Sleep(1000);
+                while (true)                                      // Цикл вывода опроса ответа ICMP 
+                {                                                 // и вывод данных
 
-                    reply = pingSender.Send(address);
-                    if (reply.Status == IPStatus.Success)
+                    System.Threading.Thread.Sleep(1000);          // Задержка вывода данных в миллисекундах
+
+                    reply = pingSender.Send(address);             // Отправка запроса ICMP
+                    if (reply.Status == IPStatus.Success)         // Получение и проверка ответа
                     
                     {
                         
@@ -66,7 +67,7 @@ namespace Popingui
                      {
                        Console.WriteLine("IP address: " + address + " not answer!");
                        Console.WriteLine();
-                        // return;
+                       
                     }
                 }
 
