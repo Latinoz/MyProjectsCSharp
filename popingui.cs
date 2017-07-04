@@ -12,12 +12,12 @@ namespace Popingui
     
     class Program
     {
-        class ForPopingui
+        class ForPopingui                                      
         {
 
-            public string ip;
+            public string ip;                               // Переменная для ввода ip адреса
 
-            public void PrintEnterIp () {                    // Метод ввода ip адреса
+            public void PrintEnterIp () {                   // Вывод инфо для ввода ip адреса                  
                 Console.WriteLine("Enter ip address: ");
                 }
         }
