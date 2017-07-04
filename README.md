@@ -1,2 +1,3 @@
-# MyProjectsCSharp
-C#
+Programm "Popingui"
+
+ping ip host
