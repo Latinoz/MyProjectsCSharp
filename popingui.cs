@@ -64,7 +64,7 @@ namespace Popingui
 
                     else
                      {
-                       Console.WriteLine("Host not answer!");
+                       Console.WriteLine("IP address: " + address + " not answer!");
                        Console.WriteLine();
                         // return;
                     }
